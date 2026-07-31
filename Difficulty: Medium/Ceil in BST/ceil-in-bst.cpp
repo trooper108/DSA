@@ -20,24 +20,19 @@ class Solution {
         if(root == NULL){
             return -1;
         }
-        int ans = INT_MAX;
+        int ans = -1;
         Node* temp = root;
         while(root != NULL){
             if(root->data == x){
                 return x;
             }
-            else if(root->data > x){
-                ans = min(ans,root->data);
-            }
             if(root->data > x){
+                ans = root->data;
                 root = root->left;
             }
             else{
                 root = root->right;
             }
-        }
-        if(ans == INT_MAX){
-            return -1;
         }
         return ans;
     }
